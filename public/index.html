@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>htmx Node.js Starter</title>
+    <script src="/js/htmx.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>The HTMX Todo Site</h1>
+      <button hx-get="/todos" hx-target="#todo-body">Reload todos</button>
+    </div>
+    <div class="main">
+      <div>
+        <h2>Todos</h2>
+
+        <table
+          hx-trigger="load"
+          hx-get="/todos"
+          id="todos"
+          hx-target="#todo-body"
+        >
+          <thead>
+            <tr>
+              <th>Complete</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="todo-body"></tbody>
+        </table>
+      </div>
+      <div>
+        <div>
+          <h2>Status:</h2>
+          <p id="status">G2G</p>
+        </div>
+        <div>
+          <h2>Add a todo</h2>
+          <form
+            hx-post="/add-todo"
+            hx-target="#todo-body"
+            hx-swap="afterbegin"
+            hx-on--after-request="this.reset()"
+          >
+            <input
+              type="text"
+              name="message"
+              placeholder="Enter a todo"
+              required
+            />
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Load Content Example
+    <h2>Load More Content</h2>
+    <button hx-get="/more-content" hx-target="#more-content">Load More</button>
+    <div id="more-content"></div> -->
+
+<!-- DELETE Example -->
+<!-- <h2>Delete Example</h2>
+    <button hx-delete="/delete" hx-target="#delete-result">Delete Item</button>
+    <div id="delete-result"></div> -->
+
+<!-- Swap Content Example -->
+<!-- <h2>Swap Content</h2>
+    <div hx-swap-oob="true" id="swap-target"></div>
+    <button hx-get="/swap-content" hx-swap="outerHTML" hx-target="#swap-target">Swap Content</button> -->

@@ -1,0 +1,38 @@
+{
+  "name": "htmx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "nodemon": "nodemon src/server.ts",
+    "dev": "bun --hot src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "bun": "^1.1.21",
+    "express": "^4.19.2",
+    "express-react-views": "^0.11.0",
+    "htmx.org": "^2.0.1",
+    "nodemon": "^3.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "server": "react-dom/server",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
